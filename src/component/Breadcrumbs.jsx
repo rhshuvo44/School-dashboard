@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Breadcrumbs = ({ item }) => {
+const Breadcrumbs = ({ title }) => {
   return (
     <div className="text-sm breadcrumbs">
       <ul>
@@ -8,7 +8,7 @@ const Breadcrumbs = ({ item }) => {
           <Link to="/dashboard">Home</Link>
         </li>
 
-        <li>{item}</li>
+        <li className="text-primary">{title}</li>
       </ul>
     </div>
   );

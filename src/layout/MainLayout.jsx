@@ -3,9 +3,11 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { AiFillCalculator, AiFillDashboard } from "react-icons/ai";
 import { PiStudentBold } from "react-icons/pi";
-import { GiTeacher } from "react-icons/gi";
+import { GiClassicalKnowledge, GiTeacher } from "react-icons/gi";
 import { FiUsers } from "react-icons/fi";
 import { LuLibrary } from "react-icons/lu";
+import { MdLibraryBooks } from "react-icons/md";
+import { BsFillCalendarDateFill } from "react-icons/bs";
 const MainLayout = () => {
   return (
     <>
@@ -237,6 +239,84 @@ const MainLayout = () => {
                       to="student"
                     >
                       Add Expenses
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <GiClassicalKnowledge className="text-white" />
+                  Class
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      All Class
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Add New Class
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <MdLibraryBooks className="text-white" />
+                  Subject
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      All Subject
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Add New subject
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <BsFillCalendarDateFill className="text-white" />
+                  Class Routine
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Class Routine
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Add Class Routine
                     </Link>
                   </li>
                 </ul>
