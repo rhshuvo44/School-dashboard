@@ -1,10 +1,11 @@
-
-
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-4 bg-base-300 text-base-content fixed bottom-0">
+    <footer className="footer footer-center p-4 bg-black text-white bottom-0">
       <aside>
-        <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+        <p>
+          Copyright © 2023 - All right reserved by
+          <span className="text-[orange] font-bold"> Elegant Code</span>
+        </p>
       </aside>
     </footer>
   );

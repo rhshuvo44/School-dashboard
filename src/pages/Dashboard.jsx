@@ -1,8 +1,9 @@
+import Breadcrumbs from "../component/Breadcrumbs";
+
 const Dashboard = () => {
   return (
     <div>
-      
-
+      <Breadcrumbs item="Dashboard" />
       <div className="overflow-x-auto w-full p-10">
         <table className="table">
           {/* head */}

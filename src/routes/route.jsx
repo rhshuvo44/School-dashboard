@@ -8,7 +8,7 @@ import Dashboard from "../pages/Dashboard.Jsx";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
   {
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
     element: <Forgotpassword />,
   },
   {
-    path: "admin",
+    path: "/",
     element: <MainLayout />,
     children: [
       {
