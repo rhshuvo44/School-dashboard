@@ -4,7 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 // import Forgotpassword from "../pages/Forgotpassword";
 import MainLayout from "../layout/MainLayout";
 import Students from "../pages/Students";
-import Dashboard from "../pages/Dashboard.Jsx";
+import Tearchers from "../pages/Tearchers";
 // import Login from "../pages/Login";
 
 export const router = createBrowserRouter([
@@ -25,8 +25,8 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "dashboard",
-        element: <Dashboard />,
+        path: "tearchers",
+        element: <Tearchers />,
       },
       {
         path: "student",
