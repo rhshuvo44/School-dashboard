@@ -18,12 +18,12 @@ const MainLayout = () => {
           type="checkbox"
           className="drawer-toggle"
         />
-        <div className="drawer-content px-10 py-5 bg-[#F0F1F3]">
+        <div className="drawer-content min-h-screen px-10 py-5 bg-[#F0F1F3]">
           <Outlet />
         </div>
         <div className="drawer-side">
           <label htmlFor="sideBarDashboard" className="drawer-overlay"></label>
-          <ul className="menu px-4 pb-24 pt-24 md:p-4 w-full md:w-72 min-h-full bg-primary text-white">
+          <ul className="menu px-4 pb-24 pt-24 md:p-4 w-72 md:w-72 min-h-full bg-primary text-white">
             <li>
               <details open>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">

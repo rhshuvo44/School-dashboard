@@ -1,5 +1,5 @@
 const Tearchers = () => {
-  return <div>Tearchers</div>;
+  return <div></div>;
 };
 
 export default Tearchers;
