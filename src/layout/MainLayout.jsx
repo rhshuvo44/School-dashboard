@@ -77,7 +77,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <PiStudentBold className="text-white" />
                   Students
@@ -119,7 +119,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <GiTeacher className="text-white" />
                   Teachers
@@ -161,7 +161,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <FiUsers className="text-white" />
                   Parents
@@ -195,7 +195,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <LuLibrary className="text-white" />
                   Library
@@ -221,7 +221,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiFillCalculator className="text-white" />
                   Accounts
@@ -255,7 +255,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <GiClassicalKnowledge className="text-white" />
                   Class
@@ -281,7 +281,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <MdLibraryBooks className="text-white" />
                   Subject
@@ -307,7 +307,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <BsFillCalendarDateFill className="text-white" />
                   Class Routine
@@ -333,7 +333,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiOutlineOrderedList className="text-white" />
                   Attendence
@@ -359,7 +359,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <PiExamBold className="text-white" />
                   Exam
@@ -385,7 +385,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <BsFillBusFrontFill className="text-white" />
                   Transport
@@ -411,7 +411,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <BsFillHouseAddFill className="text-white" />
                   Hostel
@@ -437,7 +437,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiFillNotification className="text-white" />
                   Notice
@@ -463,7 +463,7 @@ const MainLayout = () => {
               </details>
             </li>
             <li>
-              <details open>
+              <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiFillSetting className="text-white" />
                   Setting

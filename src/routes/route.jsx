@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Resetpassword from "../pages/Resetpassword";
-import Forgotpassword from "../pages/Forgotpassword";
 import MainLayout from "../layout/MainLayout";
-import Students from "../pages/Students";
-import Tearchers from "../pages/Tearchers";
+import Forgotpassword from "../pages/Forgotpassword";
 import Login from "../pages/Login";
+import Resetpassword from "../pages/Resetpassword";
+import Tearchers from "../pages/Tearchers";
+import Students from "../pages/dashboard/Students";
 
 export const router = createBrowserRouter([
   {
@@ -25,12 +25,21 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
+        path: "admin",
+        element: <Tearchers />,
+      },
+
+      {
+        path: "student",
+        element: <Students />,
+      },
+      {
         path: "tearchers",
         element: <Tearchers />,
       },
       {
-        path: "student",
-        element: <Students />,
+        path: "parents",
+        element: <Tearchers />,
       },
     ],
   },

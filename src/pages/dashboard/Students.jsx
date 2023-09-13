@@ -1,4 +1,4 @@
-import Breadcrumbs from "../component/Breadcrumbs";
+import Breadcrumbs from "../../component/Breadcrumbs";
 
 const Students = () => {
   return (
