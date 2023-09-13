@@ -18,7 +18,7 @@ const Forgotpassword = () => {
                 Forgot Password
               </h2>
               <form onSubmit={handleSubmit(onSubmit)} className="py-5">
-                <div className="form-control w-full max-w-xs mb-5">
+                <div className="form-control w-full max-w-xs">
                   <label
                     htmlFor="email"
                     className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -37,7 +37,7 @@ const Forgotpassword = () => {
                   </div>
                 </div>
                 {errors.email && (
-                  <span className="my-2 text-error">
+                  <span className="text-xs text-error">
                     This field is required
                   </span>
                 )}

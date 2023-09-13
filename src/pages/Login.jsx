@@ -1,14 +1,21 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
+import { toast } from "react-toastify";
 const Login = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    navigate("/dashboard");
+    toast.success("Login Success");
+  };
   return (
     <div className="hero min-h-screen bg-primary">
       <div className="hero-content text-neutral-content">
