@@ -1,5 +1,11 @@
+import Breadcrumbs from "../../component/Breadcrumbs";
+
 const Parents = () => {
-  return <div>parents</div>;
+  return (
+    <section>
+      <Breadcrumbs title="Parents" />
+    </section>
+  );
 };
 
 export default Parents;

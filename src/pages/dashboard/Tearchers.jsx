@@ -1,11 +1,11 @@
-
+import Breadcrumbs from "../../component/Breadcrumbs";
 
 const Tearchers = () => {
-    return (
-        <div>
-            Tearchers
-        </div>
-    );
+  return (
+    <section>
+      <Breadcrumbs title="Teachers" />
+    </section>
+  );
 };
 
 export default Tearchers;

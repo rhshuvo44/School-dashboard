@@ -1,11 +1,12 @@
+import Breadcrumbs from "../../component/Breadcrumbs";
 
 
 
 const Admin = () => {
     return (
-        <div>
-            admin
-        </div>
+        <section>
+      <Breadcrumbs title="admin" />
+    </section>
     );
 };
 

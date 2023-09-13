@@ -4,8 +4,10 @@ import MainLayout from "../layout/MainLayout";
 import Forgotpassword from "../pages/Forgotpassword";
 import Login from "../pages/Login";
 import Resetpassword from "../pages/Resetpassword";
-import Tearchers from "../pages/Tearchers";
 import Students from "../pages/dashboard/Students";
+import Admin from "../pages/dashboard/Admin";
+import Parents from "../pages/dashboard/Parents";
+import Tearchers from "../pages/dashboard/Tearchers";
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +28,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "admin",
-        element: <Tearchers />,
+        element: <Admin />,
       },
 
       {
@@ -34,12 +36,12 @@ export const router = createBrowserRouter([
         element: <Students />,
       },
       {
-        path: "tearchers",
+        path: "tearcher",
         element: <Tearchers />,
       },
       {
         path: "parents",
-        element: <Tearchers />,
+        element: <Parents />,
       },
     ],
   },

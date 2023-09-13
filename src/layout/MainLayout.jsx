@@ -42,10 +42,7 @@ const MainLayout = () => {
                 </summary>
                 <ul>
                   <li>
-                    <Link
-                      className="hover:bg-transparen capitalize"
-                      to="student"
-                    >
+                    <Link className="hover:bg-transparen capitalize" to="admin">
                       Admin
                     </Link>
                   </li>
@@ -60,7 +57,7 @@ const MainLayout = () => {
                   <li>
                     <Link
                       className="hover:bg-transparen capitalize"
-                      to="student"
+                      to="tearcher"
                     >
                       Teachers
                     </Link>
@@ -68,7 +65,7 @@ const MainLayout = () => {
                   <li>
                     <Link
                       className="hover:bg-transparen capitalize"
-                      to="student"
+                      to="parents"
                     >
                       Parents
                     </Link>
