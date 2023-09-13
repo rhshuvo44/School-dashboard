@@ -1,13 +1,23 @@
 import { Link, Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
-import { AiFillCalculator, AiFillDashboard } from "react-icons/ai";
-import { PiStudentBold } from "react-icons/pi";
+import {
+  AiFillCalculator,
+  AiFillDashboard,
+  AiFillNotification,
+  AiFillSetting,
+  AiOutlineOrderedList,
+} from "react-icons/ai";
+import { PiExamBold, PiStudentBold } from "react-icons/pi";
 import { GiClassicalKnowledge, GiTeacher } from "react-icons/gi";
 import { FiUsers } from "react-icons/fi";
 import { LuLibrary } from "react-icons/lu";
 import { MdLibraryBooks } from "react-icons/md";
-import { BsFillCalendarDateFill } from "react-icons/bs";
+import {
+  BsFillBusFrontFill,
+  BsFillCalendarDateFill,
+  BsFillHouseAddFill,
+} from "react-icons/bs";
 const MainLayout = () => {
   return (
     <>
@@ -317,6 +327,170 @@ const MainLayout = () => {
                       to="student"
                     >
                       Add Class Routine
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <AiOutlineOrderedList className="text-white" />
+                  Attendence
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Student Attendence
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Student Attendence Sheet
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <PiExamBold className="text-white" />
+                  Exam
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Exam Schedule
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Exam Grades
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <BsFillBusFrontFill className="text-white" />
+                  Transport
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Add New Transport
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      All Transport Lists
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <BsFillHouseAddFill className="text-white" />
+                  Hostel
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Add New Room
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      All Room Lists
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <AiFillNotification className="text-white" />
+                  Notice
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Add New Notice
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      All Notice Lists
+                    </Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  <AiFillSetting className="text-white" />
+                  Setting
+                </summary>
+                <ul>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      Add New User
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      All User
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="hover:bg-transparen capitalize"
+                      to="student"
+                    >
+                      User Details
                     </Link>
                   </li>
                 </ul>
