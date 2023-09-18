@@ -175,7 +175,7 @@ const MainLayout = () => {
                   <li>
                     <Link
                       className="hover:bg-transparen capitalize"
-                      to="student"
+                      to="parents-details"
                     >
                       Parents Details
                     </Link>

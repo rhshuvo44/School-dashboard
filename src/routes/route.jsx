@@ -10,6 +10,7 @@ import Parents from "../pages/dashboard/Parents";
 import Tearchers from "../pages/dashboard/Tearchers";
 import StudentDetails from "../pages/student/StudentDetails";
 import TeacherDetails from "../pages/teachers/TeacherDetails";
+import ParentsDetails from "../pages/parents/ParentsDetails";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path: "teacher-details",
         element: <TeacherDetails />,
+      },
+      {
+        path: "parents-details",
+        element: <ParentsDetails />,
       },
     ],
   },
