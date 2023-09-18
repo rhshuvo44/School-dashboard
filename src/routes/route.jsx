@@ -16,11 +16,16 @@ import AllStudents from "../pages/student/AllStudents";
 import AllTeachers from "../pages/teachers/AllTeachers";
 import AdmissionForm from "../pages/student/AdmissionForm";
 import StudentPromotion from "../pages/student/StudentPromotion";
+import Signup from "../pages/Signup";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
   {
     path: "/reset-password",
