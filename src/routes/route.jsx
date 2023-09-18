@@ -8,6 +8,7 @@ import Students from "../pages/dashboard/Students";
 import Admin from "../pages/dashboard/Admin";
 import Parents from "../pages/dashboard/Parents";
 import Tearchers from "../pages/dashboard/Tearchers";
+import StudentDetails from "../pages/student/StudentDetails";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "parents",
         element: <Parents />,
+      },
+      {
+        path: "student-details",
+        element: <StudentDetails />,
       },
     ],
   },
