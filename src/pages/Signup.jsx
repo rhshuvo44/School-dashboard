@@ -73,11 +73,8 @@ const Signup = () => {
               </div>
               <p className="text-xs text-error">{errors.password?.message}</p>
               <div className="flex flex-col md:flex-row justify-between my-2 gap-5">
-                <Link className="capitalize underline" to="/signup">
-                  create new Account
-                </Link>
-                <Link className="text-error capitalize" to="forgot-password">
-                  Forgot Password?
+                <Link className="capitalize underline" to="/login">
+                  Already Have a Account
                 </Link>
               </div>
               <button
