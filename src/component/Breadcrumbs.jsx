@@ -10,7 +10,7 @@ const Breadcrumbs = ({ title }) => {
             <Link to="/dashboard">Home</Link>
           </li>
 
-          <li className="text-primary">{title}</li>
+          <li className="text-primary capitalize">{title}</li>
         </ul>
       </div>
     </>
