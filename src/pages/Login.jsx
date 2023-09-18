@@ -11,7 +11,6 @@ const schema = yup.object().shape({
 });
 const Login = () => {
   const navigate = useNavigate();
-
   const {
     register,
     handleSubmit,
@@ -21,7 +20,7 @@ const Login = () => {
   });
   const onSubmit = (data) => {
     console.log(data);
-    navigate("/dashboard");
+    navigate("/dashboard/admin");
     toast.success("Login Success");
   };
   return (
@@ -33,7 +32,6 @@ const Login = () => {
               <h2 className="text-secondary text-center font-3xl font-bold">
                 Login
               </h2>
-
               <form onSubmit={handleSubmit(onSubmit)} className="py-5">
                 <div className="form-control w-full max-w-xs mt-5">
                   <label
@@ -42,7 +40,7 @@ const Login = () => {
                   >
                     Email
                   </label>
-                  <div className="relative flex items-center">
+                  <div className="relative flex items-center my-2">
                     <input
                       id="email"
                       type="email"
@@ -54,7 +52,6 @@ const Login = () => {
                   </div>
                 </div>
                 <p className="text-xs text-error">{errors.email?.message}</p>
-
                 <div className="form-control w-full max-w-xs mt-5">
                   <label
                     htmlFor="email"
@@ -62,7 +59,7 @@ const Login = () => {
                   >
                     Password
                   </label>
-                  <div className="relative flex items-center">
+                  <div className="relative flex items-center my-2">
                     <input
                       id="email"
                       type="password"
@@ -74,13 +71,6 @@ const Login = () => {
                   </div>
                 </div>
                 <p className="text-xs text-error">{errors.password?.message}</p>
-
-                {/* {errors.password && (
-                  <span className="text-error text-xs">
-                    This field is required
-                  </span>
-                )} */}
-
                 <div className="flex flex-col md:flex-row justify-between my-2 gap-5">
                   <Link className="capitalize underline" to="/">
                     create new Account

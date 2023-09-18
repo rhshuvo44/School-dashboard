@@ -1,12 +1,19 @@
 import { useForm } from "react-hook-form";
 import { AiFillMail } from "react-icons/ai";
-
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+const schema = yup.object().shape({
+  email: yup.string().email().required("Email is required"),
+  password: yup.string().min(8).max(32).required("Password is required"),
+});
 const Forgotpassword = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
   const onSubmit = (data) => console.log(data);
   return (
     <div className="hero min-h-screen bg-primary">
@@ -25,7 +32,7 @@ const Forgotpassword = () => {
                   >
                     Email
                   </label>
-                  <div className="relative flex items-center">
+                  <div className="relative flex items-center my-2">
                     <input
                       id="email"
                       type="email"
@@ -36,11 +43,7 @@ const Forgotpassword = () => {
                     <AiFillMail className="material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400" />
                   </div>
                 </div>
-                {errors.email && (
-                  <span className="text-xs text-error">
-                    This field is required
-                  </span>
-                )}
+                <p className="text-xs text-error">{errors.email?.message}</p>
                 <button
                   type="submit"
                   className="btn btn-block mt-5 bg-primary capitalize text-white hover:bg-secondary"

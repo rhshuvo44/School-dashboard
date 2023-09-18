@@ -1,12 +1,19 @@
 import { useForm } from "react-hook-form";
 import { RiLockPasswordLine } from "react-icons/ri";
-
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+const schema = yup.object().shape({
+  email: yup.string().email().required("Email is required"),
+  password: yup.string().min(8).max(32).required("Password is required"),
+});
 const Resetpassword = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
   const onSubmit = (data) => console.log(data);
   return (
     <div className="hero min-h-screen bg-primary">
@@ -26,7 +33,7 @@ const Resetpassword = () => {
                   >
                     Password
                   </label>
-                  <div className="relative flex items-center">
+                  <div className="relative flex items-center my-2">
                     <input
                       id="email"
                       type="password"
@@ -37,12 +44,7 @@ const Resetpassword = () => {
                     <RiLockPasswordLine className="material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400" />
                   </div>
                 </div>
-                {errors.password && (
-                  <span className="text-xs text-error">
-                    This field is required
-                  </span>
-                )}
-
+                <p className="text-xs text-error">{errors.password?.message}</p>
                 <button
                   type="submit"
                   className="btn btn-block mt-5 bg-primary capitalize text-white hover:bg-secondary"

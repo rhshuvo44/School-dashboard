@@ -11,6 +11,11 @@ import Tearchers from "../pages/dashboard/Tearchers";
 import StudentDetails from "../pages/student/StudentDetails";
 import TeacherDetails from "../pages/teachers/TeacherDetails";
 import ParentsDetails from "../pages/parents/ParentsDetails";
+import AllParents from "../pages/parents/AllParents";
+import AllStudents from "../pages/student/AllStudents";
+import AllTeachers from "../pages/teachers/AllTeachers";
+import AdmissionForm from "../pages/student/AdmissionForm";
+import StudentPromotion from "../pages/student/StudentPromotion";
 
 export const router = createBrowserRouter([
   {
@@ -33,7 +38,6 @@ export const router = createBrowserRouter([
         path: "admin",
         element: <Admin />,
       },
-
       {
         path: "student",
         element: <Students />,
@@ -57,6 +61,26 @@ export const router = createBrowserRouter([
       {
         path: "parents-details",
         element: <ParentsDetails />,
+      },
+      {
+        path: "all-parents",
+        element: <AllParents />,
+      },
+      {
+        path: "all-students",
+        element: <AllStudents />,
+      },
+      {
+        path: "all-teachers",
+        element: <AllTeachers />,
+      },
+      {
+        path: "student-promotion",
+        element: <StudentPromotion />,
+      },
+      {
+        path: "admission-form",
+        element: <AdmissionForm />,
       },
     ],
   },
