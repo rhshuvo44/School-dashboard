@@ -1,10 +1,15 @@
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-4 bg-black text-white">
+    <footer className="footer footer-center p-4 bg-primary text-white">
       <aside>
         <p>
-          Copyright © 2023 - All right reserved by 
-          <a href="" target="_blank" className="text-[orange] font-bold ml-1">
+          Copyright © 2023 - All right reserved by
+          <a
+            href="https://elegantcode.dev/"
+            rel="noreferrer"
+            target="_blank"
+            className="text-[orange] font-bold ml-1"
+          >
             Elegant Code
           </a>
         </p>

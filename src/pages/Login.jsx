@@ -27,13 +27,13 @@ const Login = () => {
   return (
     <div className="hero min-h-screen bg-primary">
       <div className="hero-content w-full flex-col lg:flex-row-reverse">
-        <div className="w-full md:w-1/2">
+        <div className="w-full hidden md:block md:w-1/2">
           <img className="w-full h-full" src={loginImg} alt="" />
         </div>
         <div className="card w-full md:w-1/2 shadow-2xl bg-base-100 max-w-md">
           <div className="card-body">
             <form onSubmit={handleSubmit(onSubmit)} className="py-5">
-              <div className="form-control w-full max-w-xs mt-5">
+              <div className="form-control w-full  mt-5">
                 <label
                   htmlFor="email"
                   className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
@@ -52,7 +52,7 @@ const Login = () => {
                 </div>
               </div>
               <p className="text-xs text-error">{errors.email?.message}</p>
-              <div className="form-control w-full max-w-xs mt-5">
+              <div className="form-control w-full mt-5">
                 <label
                   htmlFor="password"
                   className="inline-block w-full text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
