@@ -3,48 +3,14 @@ import {
   getCoreRowModel,
   getPaginationRowModel,
   useReactTable,
+  getSortedRowModel,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
 import { useState } from "react";
-import makeData from "../../MOCK_DATA.json";
 
-// {
-//     "id": 1000,
-//     "first_name": "Janine",
-//     "last_name": "Raiment",
-//     "email": "jraimentrr@imdb.com",
-//     "gender": "Female",
-//     "ip_address": "82.65.206.1"
-//   }
-const defaultColumns = [
-  {
-    header: "Id",
-    accessorKey: "id",
-  },
-  {
-    header: "First Name",
-    accessorKey: "first_name",
-  },
-
-  {
-    header: "Last Name",
-    accessorKey: "last_name",
-  },
-  {
-    header: "Email",
-    accessorKey: "email",
-  },
-  {
-    header: "Gender",
-    accessorKey: "gender",
-  },
-  {
-    header: "Ip Address",
-    accessorKey: "ip_address",
-  },
-];
-const DataTable = () => {
-  const [data] = useState(makeData);
-  const [columns] = useState(() => [...defaultColumns]);
+const DataTable = ({ data, columns }) => {
+  const [sorting, setSorting] = useState([]);
+  const [filter, setFilter] = useState("");
 
   // Create the table and pass your options
   const table = useReactTable({
@@ -52,38 +18,63 @@ const DataTable = () => {
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    state: {
+      sorting: sorting,
+      globalFilter: filter,
+    },
+    onSortingChange: setSorting,
+    onGlobalFilterChange: setFilter,
+    debugTable: true,
   });
 
-  // Manage your own state
-  const [state, setState] = useState(table.initialState);
-
-  // Override the state managers for the table to your own
-  table.setOptions((prev) => ({
-    ...prev,
-    state,
-    onStateChange: setState,
-    // These are just table options, so if things
-    // need to change based on your state, you can
-    // derive them here
-
-    // Just for fun, let's debug everything if the pageIndex
-    // is greater than 2
-    debugTable: state.pagination.pageIndex > 2,
-  }));
   return (
     <div className="overflow-x-auto">
+      <div className="font-sans text-black py-2 w-full bg-white flex items-center justify-center">
+        <div className="border rounded overflow-hidden flex">
+          <input
+            type="text"
+            className="px-4 py-2"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            placeholder="Search..."
+          />
+          <button className="flex items-center justify-center px-4 border-l">
+            <svg
+              className="h-4 w-4 text-grey-dark"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
       <table className="table">
         <thead className="bg-primary text-white">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th key={header.id} colSpan={header.colSpan}>
+                <th
+                  onClick={header.column.getToggleSortingHandler()}
+                  key={header.id}
+                  colSpan={header.colSpan}
+                >
                   {header.isPlaceholder
                     ? null
                     : flexRender(
                         header.column.columnDef.header,
                         header.getContext()
                       )}
+                  {
+                    {
+                      asc: " 🔼",
+                      desc: " 🔽",
+                    }[header.column.getIsSorted() ?? null]
+                  }
                 </th>
               ))}
             </tr>
