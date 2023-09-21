@@ -1,14 +1,14 @@
 import {
-    AiFillCalculator,
-    AiFillDashboard,
-    AiFillNotification,
-    AiFillSetting,
-    AiOutlineOrderedList,
+  AiFillCalculator,
+  AiFillDashboard,
+  AiFillNotification,
+  AiFillSetting,
+  AiOutlineOrderedList,
 } from "react-icons/ai";
 import {
-    BsFillBusFrontFill,
-    BsFillCalendarDateFill,
-    BsFillHouseAddFill,
+  BsFillBusFrontFill,
+  BsFillCalendarDateFill,
+  BsFillHouseAddFill,
 } from "react-icons/bs";
 import { FiUsers } from "react-icons/fi";
 import { GiClassicalKnowledge, GiTeacher } from "react-icons/gi";
@@ -53,7 +53,7 @@ export const navLink = [
         title: "Student Details",
       },
       {
-        path: "admisson-form",
+        path: "admission-form",
         title: "Admisson Form",
       },
       {
