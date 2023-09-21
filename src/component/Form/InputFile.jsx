@@ -2,7 +2,7 @@ const InputFile = ({ name, classname, id, label, val, onCh, onBl }) => {
   return (
     <div className="form-control w-full">
       <label className="label">
-        <span className="label-text">{label}</span>
+        <span className="label-text text-md font-bold">{label}</span>
       </label>
       <input
         id={id}

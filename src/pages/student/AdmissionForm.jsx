@@ -23,6 +23,7 @@ let schema = yup.object().shape({
   admissionID: yup.string().required("Admission ID is Required"),
   phone: yup.string().required("Phone Number is Required"),
   shortBIO: yup.string().required("Short BIO is Required"),
+  img: yup.string().required("Image is Required"),
 });
 const AdmissionForm = () => {
   const formik = useFormik({
@@ -40,6 +41,7 @@ const AdmissionForm = () => {
       admissionID: "",
       phone: "",
       shortBIO: "",
+      img: "",
     },
     validationSchema: schema,
     onSubmit: (values) => {
@@ -177,24 +179,24 @@ const AdmissionForm = () => {
             </div>
             <div>
               <InputFile
-                id="shortBIO"
-                label="Short BIO"
-                name="shortBIO"
-                placeholder="Enter Short BIO"
+                id="img"
+                label="Upload Student Photo (150px X 150px)"
+                name="img"
                 classname="focus:outline-0 bg-[#F0F1F3]"
                 onCh={formik.handleChange}
                 onBl={formik.handleBlur}
-                value={formik.values.shortBIO}
+                value={formik.values.img}
               />
-              {formik.touched.shortBIO && formik.errors.shortBIO ? (
-                <div className="text-error text-sm">
-                  {formik.errors.shortBIO}
-                </div>
+              {formik.touched.img && formik.errors.img ? (
+                <div className="text-error text-sm">{formik.errors.img}</div>
               ) : null}
             </div>
           </div>
 
+          <div className="flex gap-10">
           <SubmitBtn>Save</SubmitBtn>
+          <SubmitBtn>Reset</SubmitBtn>
+          </div>
         </form>
       </div>
     </div>
