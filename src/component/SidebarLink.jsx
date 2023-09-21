@@ -1,4 +1,5 @@
 import { AiFillDashboard } from "react-icons/ai";
+import { GiTeacher } from "react-icons/gi";
 import { PiStudentBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
@@ -28,7 +29,7 @@ const SidebarLink = () => {
       ],
     },
     {
-      id: 1,
+      id: 2,
       navTitle: "Students",
       icon: <PiStudentBold className="text-white" />,
       links: [
@@ -50,6 +51,29 @@ const SidebarLink = () => {
         },
       ],
     },
+    {
+      id: 3,
+      navTitle: "Teachers",
+      icon: <GiTeacher className="text-white" />,
+      links: [
+        {
+          path: "all-teachers",
+          title: "All Tearchers",
+        },
+        {
+          path: "teacher-details",
+          title: "Teacher Details",
+        },
+        {
+          path: "add-teacher",
+          title: "Add Teacher",
+        },
+        {
+          path: "payment",
+          title: "Payment",
+        },
+      ],
+    },
   ];
 
   return (
@@ -57,24 +81,45 @@ const SidebarLink = () => {
       {navLink.map((item) => (
         <>
           <li key={item.id}>
-            <details open>
-              <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
-                {item.icon}
-                {item.navTitle}
-              </summary>
-              <ul>
-                {item.links.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      className="hover:bg-transparen capitalize"
-                      to={link.path}
-                    >
-                      {link.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </details>
+            {item.id === 1 ? (
+              <details open>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  {item.icon}
+                  {item.navTitle}
+                </summary>
+                <ul>
+                  {item.links.map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        className="hover:bg-transparen capitalize"
+                        to={link.path}
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            ) : (
+              <details>
+                <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
+                  {item.icon}
+                  {item.navTitle}
+                </summary>
+                <ul>
+                  {item.links.map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        className="hover:bg-transparen capitalize"
+                        to={link.path}
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
           </li>
         </>
       ))}

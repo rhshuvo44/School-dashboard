@@ -117,7 +117,7 @@ const MainLayout = () => {
                 </ul>
               </details>
             </li> */}
-            <li>
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <GiTeacher className="text-white" />
@@ -158,7 +158,7 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
+            </li> */}
             <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
