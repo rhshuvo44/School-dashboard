@@ -1,24 +1,7 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import SidebarLink from "../component/SidebarLink";
 import Footer from "./Footer";
 import Header from "./Header";
-import {
-  AiFillCalculator,
-  AiFillDashboard,
-  AiFillNotification,
-  AiFillSetting,
-  AiOutlineOrderedList,
-} from "react-icons/ai";
-import { PiExamBold, PiStudentBold } from "react-icons/pi";
-import { GiClassicalKnowledge, GiTeacher } from "react-icons/gi";
-import { FiUsers } from "react-icons/fi";
-import { LuLibrary } from "react-icons/lu";
-import { MdLibraryBooks } from "react-icons/md";
-import {
-  BsFillBusFrontFill,
-  BsFillCalendarDateFill,
-  BsFillHouseAddFill,
-} from "react-icons/bs";
-import SidebarLink from "../component/SidebarLink";
 const MainLayout = () => {
   return (
     <>
@@ -74,7 +57,7 @@ const MainLayout = () => {
                 </ul>
               </details>
             </li> */}
-            <SidebarLink/>
+            <SidebarLink />
             {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
@@ -159,7 +142,7 @@ const MainLayout = () => {
                 </ul>
               </details>
             </li> */}
-            <li>
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <FiUsers className="text-white" />
@@ -192,8 +175,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <LuLibrary className="text-white" />
@@ -218,8 +201,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiFillCalculator className="text-white" />
@@ -252,8 +235,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <GiClassicalKnowledge className="text-white" />
@@ -278,8 +261,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <MdLibraryBooks className="text-white" />
@@ -304,8 +287,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <BsFillCalendarDateFill className="text-white" />
@@ -330,8 +313,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiOutlineOrderedList className="text-white" />
@@ -356,8 +339,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <PiExamBold className="text-white" />
@@ -382,8 +365,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <BsFillBusFrontFill className="text-white" />
@@ -408,8 +391,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <BsFillHouseAddFill className="text-white" />
@@ -434,8 +417,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiFillNotification className="text-white" />
@@ -460,8 +443,8 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiFillSetting className="text-white" />
@@ -494,7 +477,7 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
+            </li> */}
 
             {/* Sidebar content here */}
           </ul>
