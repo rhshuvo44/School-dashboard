@@ -18,6 +18,7 @@ import {
   BsFillCalendarDateFill,
   BsFillHouseAddFill,
 } from "react-icons/bs";
+import SidebarLink from "../component/SidebarLink";
 const MainLayout = () => {
   return (
     <>
@@ -34,7 +35,7 @@ const MainLayout = () => {
         <div className="drawer-side">
           <label htmlFor="sideBarDashboard" className="drawer-overlay"></label>
           <ul className="menu px-4 pb-24 pt-24 md:p-4 w-72 md:w-72 min-h-full bg-primary text-white">
-            <li>
+            {/* <li>
               <details open>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <AiFillDashboard className="text-white" />
@@ -72,8 +73,9 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
+            </li> */}
+            <SidebarLink/>
+            {/* <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
                   <PiStudentBold className="text-white" />
@@ -114,7 +116,7 @@ const MainLayout = () => {
                   </li>
                 </ul>
               </details>
-            </li>
+            </li> */}
             <li>
               <details>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">

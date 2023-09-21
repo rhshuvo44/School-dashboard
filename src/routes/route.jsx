@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
         element: <Students />,
       },
       {
-        path: "tearcher",
+        path: "teacher",
         element: <Tearchers />,
       },
       {

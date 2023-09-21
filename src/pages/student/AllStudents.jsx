@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import Breadcrumbs from "../../component/Breadcrumbs";
 import DataTable from "../../component/DataTable";
-import data from "../../../MOCK_DATA.json";
 
 const columns = [
   {
@@ -9,22 +9,30 @@ const columns = [
   },
   {
     header: "Name",
-    accessorFn: (row) => `${row.first_name} ${row.last_name}`,
+    accessorFn: (row) => `${row.firstName} ${row.lastlame} ${row.maidenName}`,
   },
   {
     header: "Email",
     accessorKey: "email",
   },
   {
-    header: "Gender",
-    accessorKey: "gender",
+    header: "Website",
+    accessorKey: "website",
   },
   {
-    header: "Ip Address",
-    accessorKey: "ip_address",
+    header: "Phone",
+    accessorKey: "phone",
   },
 ];
+
 const AllStudents = () => {
+  const [data, setData] = useState([]);
+  console.log(data);
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/users`)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, [data]);
   return (
     <div>
       <Breadcrumbs title="All Students" />
