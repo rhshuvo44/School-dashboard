@@ -1,6 +1,5 @@
 const InputTextarea = ({
   name,
-  type,
   classname,
   id,
   label,
@@ -18,7 +17,6 @@ const InputTextarea = ({
         className={`textarea textarea-bordered h-44 ${classname}`}
         id={id}
         name={name}
-        type={type}
         onChange={onCh}
         onBlur={onBl}
         value={val}

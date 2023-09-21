@@ -8,8 +8,10 @@
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: black;
+  color: #fff;
+  /* background-image: linear-gradient(to right, #659dbd , orange) !important; */
   font-size: 16px;
+  border-radius: 5px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
@@ -19,7 +21,7 @@
 }
 
 .btn-common:hover {
-  background: #659dbd;
+  /* background: #659dbd !important; */
   color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px #659dbd, 0 0 25px #659dbd, 0 0 50px #659dbd,
@@ -47,6 +49,6 @@
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #659dbd);
+  background: linear-gradient(90deg, transparent, black);
   animation: btn-anim1 2s linear infinite;
 }

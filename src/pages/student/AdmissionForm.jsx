@@ -1,8 +1,10 @@
 import { useFormik } from "formik";
 import * as yup from "yup";
-import InputText from "../../component/InputText";
+import InputText from "../../component/Form/InputText";
 import Breadcrumbs from "../../component/Breadcrumbs";
-import InputTextarea from "../../component/InputTextarea";
+import InputTextarea from "../../component/Form/InputTextarea";
+import InputFile from "../../component/Form/InputFile";
+import SubmitBtn from "../../utils/SubmitBtn";
 
 let schema = yup.object().shape({
   firstName: yup.string().required("First Name is Required"),
@@ -173,26 +175,26 @@ const AdmissionForm = () => {
                 </div>
               ) : null}
             </div>
-
             <div>
-              <InputText
-                id="lastName"
-                name="lastName"
-                type="text"
+              <InputFile
+                id="shortBIO"
+                label="Short BIO"
+                name="shortBIO"
+                placeholder="Enter Short BIO"
+                classname="focus:outline-0 bg-[#F0F1F3]"
                 onCh={formik.handleChange}
                 onBl={formik.handleBlur}
-                value={formik.values.lastName}
+                value={formik.values.shortBIO}
               />
-              {formik.touched.lastName && formik.errors.lastName ? (
-                <div>{formik.errors.lastName}</div>
+              {formik.touched.shortBIO && formik.errors.shortBIO ? (
+                <div className="text-error text-sm">
+                  {formik.errors.shortBIO}
+                </div>
               ) : null}
             </div>
           </div>
 
-          <button className="btn-common" type="submit">
-            save
-            <span></span>
-          </button>
+          <SubmitBtn>Save</SubmitBtn>
         </form>
       </div>
     </div>
