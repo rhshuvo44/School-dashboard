@@ -1,4 +1,4 @@
-const InputText = ({
+const InputTextarea = ({
   name,
   type,
   classname,
@@ -10,11 +10,12 @@ const InputText = ({
   onBl,
 }) => {
   return (
-    <div className="form-control w-full">
+    <div className="form-control">
       <label className="label">
         <span className="label-text text-md font-bold">{label}</span>
       </label>
-      <input
+      <textarea
+        className={`textarea textarea-bordered h-44 ${classname}`}
         id={id}
         name={name}
         type={type}
@@ -22,10 +23,9 @@ const InputText = ({
         onBlur={onBl}
         value={val}
         placeholder={placeholder}
-        className={`input input-bordered w-full ${classname}`}
-      />
+      ></textarea>
     </div>
   );
 };
 
-export default InputText;
+export default InputTextarea;

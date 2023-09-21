@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import InputText from "../../component/InputText";
 import Breadcrumbs from "../../component/Breadcrumbs";
+import InputTextarea from "../../component/InputTextarea";
 
 let schema = yup.object().shape({
   firstName: yup.string().required("First Name is Required"),
@@ -15,6 +16,11 @@ let schema = yup.object().shape({
     .string()
     .email("Invalid email address")
     .required("Email is Required"),
+  class: yup.string().required("Class is Required"),
+  section: yup.string().required("Section is Required"),
+  admissionID: yup.string().required("Admission ID is Required"),
+  phone: yup.string().required("Phone Number is Required"),
+  shortBIO: yup.string().required("Short BIO is Required"),
 });
 const AdmissionForm = () => {
   const formik = useFormik({
@@ -27,6 +33,11 @@ const AdmissionForm = () => {
       blood: "",
       religion: "",
       email: "",
+      class: "",
+      section: "",
+      admissionID: "",
+      phone: "",
+      shortBIO: "",
     },
     validationSchema: schema,
     onSubmit: (values) => {
@@ -46,7 +57,7 @@ const AdmissionForm = () => {
                 id="firstName"
                 name="firstName"
                 label="First Name"
-                placeholder="Enter Your First Name"
+                placeholder="Enter First Name"
                 type="text"
                 classname="focus:outline-0 bg-[#F0F1F3]"
                 onCh={formik.handleChange}
@@ -64,7 +75,7 @@ const AdmissionForm = () => {
                 id="lastName"
                 label="Last Name"
                 name="lastName"
-                placeholder="Enter Your Last Name"
+                placeholder="Enter Last Name"
                 classname="focus:outline-0 bg-[#F0F1F3]"
                 type="text"
                 onCh={formik.handleChange}
@@ -77,21 +88,92 @@ const AdmissionForm = () => {
                 </div>
               ) : null}
             </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <InputText
-                id="lastName"
-                name="lastName"
+                id="roll"
+                label="Roll"
+                name="roll"
+                placeholder="Enter Roll"
+                classname="focus:outline-0 bg-[#F0F1F3]"
                 type="text"
                 onCh={formik.handleChange}
                 onBl={formik.handleBlur}
-                value={formik.values.lastName}
+                value={formik.values.roll}
               />
-              {formik.touched.lastName && formik.errors.lastName ? (
-                <div>{formik.errors.lastName}</div>
+              {formik.touched.roll && formik.errors.roll ? (
+                <div className="text-error text-sm">{formik.errors.roll}</div>
               ) : null}
             </div>
+            <div>
+              <InputText
+                id="email"
+                label="Email"
+                name="email"
+                placeholder="Enter Email"
+                classname="focus:outline-0 bg-[#F0F1F3]"
+                type="text"
+                onCh={formik.handleChange}
+                onBl={formik.handleBlur}
+                value={formik.values.email}
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <div className="text-error text-sm">{formik.errors.email}</div>
+              ) : null}
+            </div>
+            <div>
+              <InputText
+                id="admissionID"
+                label="Admission ID"
+                name="admissionID"
+                placeholder="Enter admission ID"
+                classname="focus:outline-0 bg-[#F0F1F3]"
+                type="text"
+                onCh={formik.handleChange}
+                onBl={formik.handleBlur}
+                value={formik.values.admissionID}
+              />
+              {formik.touched.admissionID && formik.errors.admissionID ? (
+                <div className="text-error text-sm">
+                  {formik.errors.admissionID}
+                </div>
+              ) : null}
+            </div>
+            <div>
+              <InputText
+                id="phone"
+                label="Phone"
+                name="phone"
+                placeholder="Enter Phone"
+                classname="focus:outline-0 bg-[#F0F1F3]"
+                type="tel"
+                onCh={formik.handleChange}
+                onBl={formik.handleBlur}
+                value={formik.values.phone}
+              />
+              {formik.touched.phone && formik.errors.phone ? (
+                <div className="text-error text-sm">{formik.errors.phone}</div>
+              ) : null}
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <InputTextarea
+                id="shortBIO"
+                label="Short BIO"
+                name="shortBIO"
+                placeholder="Enter Short BIO"
+                classname="focus:outline-0 bg-[#F0F1F3]"
+                onCh={formik.handleChange}
+                onBl={formik.handleBlur}
+                value={formik.values.shortBIO}
+              />
+              {formik.touched.shortBIO && formik.errors.shortBIO ? (
+                <div className="text-error text-sm">
+                  {formik.errors.shortBIO}
+                </div>
+              ) : null}
+            </div>
+
             <div>
               <InputText
                 id="lastName"
@@ -107,7 +189,10 @@ const AdmissionForm = () => {
             </div>
           </div>
 
-          <button type="submit">Submit</button>
+          <button className="btn-common" type="submit">
+            save
+            <span></span>
+          </button>
         </form>
       </div>
     </div>

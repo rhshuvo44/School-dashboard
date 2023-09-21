@@ -4,3 +4,49 @@
   background-color: transparent !important;
   color: orange !important;
 }
+.btn-common {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.btn-common:hover {
+  background: #659dbd;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #659dbd, 0 0 25px #659dbd, 0 0 50px #659dbd,
+    0 0 100px #659dbd;
+}
+
+.btn-common span {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.btn-common span:nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #659dbd);
+  animation: btn-anim1 2s linear infinite;
+}
