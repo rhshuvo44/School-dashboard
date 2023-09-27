@@ -1,3 +1,5 @@
+import FormLabe from "./FormLabe";
+
 const InputText = ({
   name,
   type,
@@ -11,9 +13,7 @@ const InputText = ({
 }) => {
   return (
     <div className="form-control w-full">
-      <label className="label">
-        <span className="label-text text-md font-bold">{label}</span>
-      </label>
+      <FormLabe id={id} label={label} />
       <input
         id={id}
         name={name}

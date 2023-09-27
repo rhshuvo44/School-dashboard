@@ -1,15 +1,19 @@
 import { useFormik } from "formik";
+import Select from "react-select";
 import * as yup from "yup";
-import InputText from "../../component/Form/InputText";
 import Breadcrumbs from "../../component/Breadcrumbs";
-import InputTextarea from "../../component/Form/InputTextarea";
 import InputFile from "../../component/Form/InputFile";
+import InputText from "../../component/Form/InputText";
+import InputTextarea from "../../component/Form/InputTextarea";
 import SubmitBtn from "../../utils/SubmitBtn";
 
+import { useEffect, useState } from "react";
+import { bloods, classes, ganders, religions, sections } from "../../services";
+import Inputselect from "../../component/Form/Inputselect";
 let schema = yup.object().shape({
   firstName: yup.string().required("First Name is Required"),
   lastName: yup.string().required("Last Name is Required"),
-  gender: yup.string().required("Gender is Required"),
+  gander: yup.string().required("Gender is Required"),
   dob: yup.string().required("Date of Birth is Required"),
   roll: yup.string().required("Roll is Required"),
   blood: yup.string().required("Blood Group is Required"),
@@ -26,11 +30,17 @@ let schema = yup.object().shape({
   img: yup.string().required("Image is Required"),
 });
 const AdmissionForm = () => {
+  const [gander, setGander] = useState("");
+  const [blood, setBlood] = useState("");
+  const [religion, setReligion] = useState("");
+  const [StudentClass, setStudentClass] = useState("");
+  const [section, setSection] = useState("");
+
   const formik = useFormik({
     initialValues: {
       firstName: "",
       lastName: "",
-      gender: "",
+      gander: "",
       dob: "",
       roll: "",
       blood: "",
@@ -46,9 +56,18 @@ const AdmissionForm = () => {
     validationSchema: schema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      console.log(values);
       formik.resetForm();
     },
   });
+  useEffect(() => {
+    formik.values.gander = gander ? gander : "";
+    formik.values.blood = blood ? blood : "";
+    formik.values.religion = religion ? religion : "";
+    formik.values.StudentClass = StudentClass ? StudentClass : "";
+    formik.values.section = section ? section : "";
+  }, [formik.values, gander, blood, religion, StudentClass, section]);
+
   return (
     <div>
       <Breadcrumbs title="Student Admit Form" />
@@ -93,6 +112,34 @@ const AdmissionForm = () => {
               ) : null}
             </div>
             <div>
+              <Inputselect
+                label="gander"
+                onChange={(e) => setGander(e.value)}
+                options={ganders}
+                placeholder="Select Gander"
+                id="gander"
+                name="gander"
+              ></Inputselect>
+              {formik.touched.gander && formik.errors.gander ? (
+                <div className="text-error text-sm">{formik.errors.gander}</div>
+              ) : null}
+            </div>
+            <div>
+              <InputText
+                id="dob"
+                label="Date of Birth"
+                name="dob"
+                classname="focus:outline-0 bg-[#F0F1F3]"
+                type="date"
+                onCh={formik.handleChange}
+                onBl={formik.handleBlur}
+                value={formik.values.dob}
+              />
+              {formik.touched.dob && formik.errors.dob ? (
+                <div className="text-error text-sm">{formik.errors.dob}</div>
+              ) : null}
+            </div>
+            <div>
               <InputText
                 id="roll"
                 label="Roll"
@@ -109,9 +156,37 @@ const AdmissionForm = () => {
               ) : null}
             </div>
             <div>
+              <Inputselect
+                label="Blood Group "
+                onChange={(e) => setBlood(e.value)}
+                options={bloods}
+                placeholder="Please Select Blood"
+                id="blood"
+                name="blood"
+              ></Inputselect>
+              {formik.touched.blood && formik.errors.blood ? (
+                <div className="text-error text-sm">{formik.errors.blood}</div>
+              ) : null}
+            </div>
+            <div>
+              <Inputselect
+                label="Religion"
+                onChange={(e) => setReligion(e.value)}
+                options={religions}
+                placeholder="Please Select Religion "
+                id="religion"
+                name="religion"
+              ></Inputselect>
+              {formik.touched.religion && formik.errors.religion ? (
+                <div className="text-error text-sm">
+                  {formik.errors.religion}
+                </div>
+              ) : null}
+            </div>
+            <div>
               <InputText
                 id="email"
-                label="Email"
+                label="E-mail"
                 name="email"
                 placeholder="Enter Email"
                 classname="focus:outline-0 bg-[#F0F1F3]"
@@ -122,6 +197,34 @@ const AdmissionForm = () => {
               />
               {formik.touched.email && formik.errors.email ? (
                 <div className="text-error text-sm">{formik.errors.email}</div>
+              ) : null}
+            </div>
+            <div>
+              <Inputselect
+                label="Class"
+                onChange={(e) => setStudentClass(e.value)}
+                options={classes}
+                placeholder="Please Select Class"
+                id="class"
+                name="class"
+              ></Inputselect>
+              {formik.touched.class && formik.errors.class ? (
+                <div className="text-error text-sm">{formik.errors.class}</div>
+              ) : null}
+            </div>
+            <div>
+              <Inputselect
+                label="Section"
+                onChange={(e) => setSection(e.value)}
+                options={sections}
+                placeholder="Please Select Section "
+                id="section"
+                name="section"
+              ></Inputselect>
+              {formik.touched.section && formik.errors.section ? (
+                <div className="text-error text-sm">
+                  {formik.errors.section}
+                </div>
               ) : null}
             </div>
             <div>
@@ -194,8 +297,14 @@ const AdmissionForm = () => {
           </div>
 
           <div className="flex gap-10">
-          <SubmitBtn>Save</SubmitBtn>
-          <SubmitBtn>Reset</SubmitBtn>
+            <SubmitBtn type="submit">Save</SubmitBtn>
+            {/* <button type="submit">Submit</button> */}
+            <SubmitBtn
+              type="reset"
+              className=" from-pink-500 to-yellow-500  hover:from-green-400 hover:to-blue-500 "
+            >
+              Reset
+            </SubmitBtn>
           </div>
         </form>
       </div>

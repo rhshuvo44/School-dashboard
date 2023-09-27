@@ -1,3 +1,5 @@
+import FormLabe from "./FormLabe";
+
 const InputTextarea = ({
   name,
   classname,
@@ -10,9 +12,7 @@ const InputTextarea = ({
 }) => {
   return (
     <div className="form-control">
-      <label className="label">
-        <span className="label-text text-md font-bold">{label}</span>
-      </label>
+      <FormLabe id={id} label={label} />
       <textarea
         className={`textarea textarea-bordered h-44 ${classname}`}
         id={id}

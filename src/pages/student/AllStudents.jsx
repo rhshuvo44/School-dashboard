@@ -27,20 +27,20 @@ const columns = [
 
 const AllStudents = () => {
   const [data, setData] = useState([]);
-  console.log(data);
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [data]);
   return (
-    <div>
+    <section>
       <Breadcrumbs title="All Students" />
-      <div className="bg-base-100 shadow-2xl p-5">
-        <h1 className="text-2xl font-bold mb-5">All Students Data</h1>
+      {/* <div className="bg-base-100 shadow-2xl p-5">
+        <h2 className="text-2xl font-bold mb-5">All Students Data</h2> */}
         <DataTable data={data} columns={columns} />
-      </div>
-    </div>
+       
+      </section>
+    // </div>
   );
 };
 
