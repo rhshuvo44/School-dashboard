@@ -21,6 +21,7 @@ import AddTeacher from "../pages/teachers/AddTeacher";
 import AddParent from "../pages/parents/AddParent";
 import AddBook from "../pages/Library/AddBook";
 import AddExpenses from "../pages/Accounts/AddExpenses";
+import AddClass from "../pages/class/AddClass";
 
 export const router = createBrowserRouter([
   {
@@ -106,6 +107,10 @@ export const router = createBrowserRouter([
       {
         path: "add-new-expenses",
         element: <AddExpenses />,
+      },
+      {
+        path: "add-new-class",
+        element: <AddClass />,
       },
     ],
   },

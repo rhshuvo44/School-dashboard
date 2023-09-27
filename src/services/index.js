@@ -7,6 +7,7 @@ import {
   religions,
   sections,
   statuss,
+  subjects,
 } from "./sectionData";
 
 navLink;
@@ -17,6 +18,7 @@ classes;
 sections;
 expenses;
 statuss;
+subjects;
 export {
   navLink,
   ganders,
@@ -26,4 +28,5 @@ export {
   sections,
   expenses,
   statuss,
+  subjects,
 };

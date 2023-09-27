@@ -30,17 +30,22 @@ export const sections = [
   { value: "Pink", label: "Pink" },
   { value: "Blue", label: "Blue" },
   { value: "Bird", label: "Bird" },
-  { value: "Rose", label: "Two" },
+  { value: "Rose", label: "Rose" },
   { value: "Red", label: "Red" },
 ];
 export const expenses = [
-  { value: "Pink", label: "Pink" },
-  { value: "Blue", label: "Blue" },
-  { value: "Bird", label: "Bird" },
-  { value: "Rose", label: "Two" },
-  { value: "Red", label: "Red" },
+  { value: "Salary", label: "Salary" },
+  { value: "Transport", label: "Transport" },
+  { value: "Maintanance", label: "Maintanance" },
+  { value: "Purchase", label: "Purchase" },
+  { value: "Utilities", label: "Utilities" },
 ];
 export const statuss = [
+  { value: "Paid", label: "Paid" },
+  { value: "Due", label: "Due" },
+  { value: "Others", label: "Others" },
+];
+export const subjects = [
   { value: "Paid", label: "Paid" },
   { value: "Due", label: "Due" },
   { value: "Others", label: "Others" },
