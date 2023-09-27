@@ -17,6 +17,7 @@ import AllTeachers from "../pages/teachers/AllTeachers";
 import AdmissionForm from "../pages/student/AdmissionForm";
 import StudentPromotion from "../pages/student/StudentPromotion";
 import Signup from "../pages/Signup";
+import AddTeacher from "../pages/teachers/AddTeacher";
 
 export const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ export const router = createBrowserRouter([
       {
         path: "all-teachers",
         element: <AllTeachers />,
+      },
+      {
+        path: "add-teacher",
+        element: <AddTeacher />,
       },
       {
         path: "student-promotion",

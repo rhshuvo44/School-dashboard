@@ -14,7 +14,7 @@ let schema = yup.object().shape({
   lastName: yup.string().required("Last Name is Required"),
   gander: yup.string().required("Gender is Required"),
   dob: yup.string().required("Date of Birth is Required"),
-  roll: yup.string().required("Roll is Required"),
+  idNo: yup.string().required("ID No is Required"),
   blood: yup.string().required("Blood Group is Required"),
   religion: yup.string().required("Religion is Required"),
   email: yup
@@ -23,12 +23,13 @@ let schema = yup.object().shape({
     .required("Email is Required"),
   class: yup.string().required("Class is Required"),
   section: yup.string().required("Section is Required"),
-  admissionID: yup.string().required("Admission ID is Required"),
+  address: yup.string().required("Address ID is Required"),
   phone: yup.string().required("Phone Number is Required"),
   shortBIO: yup.string().required("Short BIO is Required"),
   // img: yup.string().required("Image is Required"),
 });
-const AdmissionForm = () => {
+
+const AddTeacher = () => {
   const [gander, setGander] = useState("");
   const [blood, setBlood] = useState("");
   const [religion, setReligion] = useState("");
@@ -42,13 +43,13 @@ const AdmissionForm = () => {
       lastName: "",
       gander: "",
       dob: "",
-      roll: "",
+      idNo: "",
       blood: "",
       religion: "",
       email: "",
       class: "",
       section: "",
-      admissionID: "",
+      address: "",
       phone: "",
       shortBIO: "",
       img: [],
@@ -76,12 +77,11 @@ const AdmissionForm = () => {
     section,
     uploadedFiles,
   ]);
-
   return (
     <section>
-      <Breadcrumbs title="Student Admit Form" />
+      <Breadcrumbs title="Add New Teacher" />
       <div className="bg-base-100 shadow-2xl p-5">
-        <h2 className="text-2xl font-bold mb-5">Add New Students</h2>
+        <h2 className="text-2xl font-bold mb-5">Add New Teacher</h2>
         <form onSubmit={formik.handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
             <div>
@@ -150,18 +150,18 @@ const AdmissionForm = () => {
             </div>
             <div>
               <InputText
-                id="roll"
-                label="Roll"
-                name="roll"
-                placeholder="Enter Roll"
+                id="idNo"
+                label="Id No"
+                name="idNo"
+                placeholder="Enter Id No"
                 classname="focus:outline-0 bg-[#F0F1F3]"
                 type="text"
                 onCh={formik.handleChange}
                 onBl={formik.handleBlur}
-                value={formik.values.roll}
+                value={formik.values.idNo}
               />
-              {formik.touched.roll && formik.errors.roll ? (
-                <div className="text-error text-sm">{formik.errors.roll}</div>
+              {formik.touched.idNo && formik.errors.idNo ? (
+                <div className="text-error text-sm">{formik.errors.idNo}</div>
               ) : null}
             </div>
             <div>
@@ -238,19 +238,19 @@ const AdmissionForm = () => {
             </div>
             <div>
               <InputText
-                id="admissionID"
-                label="Admission ID"
-                name="admissionID"
-                placeholder="Enter admission ID"
+                id="address"
+                label="Address "
+                name="address"
+                placeholder="Enter Address"
                 classname="focus:outline-0 bg-[#F0F1F3]"
                 type="text"
                 onCh={formik.handleChange}
                 onBl={formik.handleBlur}
-                value={formik.values.admissionID}
+                value={formik.values.address}
               />
-              {formik.touched.admissionID && formik.errors.admissionID ? (
+              {formik.touched.address && formik.errors.address ? (
                 <div className="text-error text-sm">
-                  {formik.errors.admissionID}
+                  {formik.errors.address}
                 </div>
               ) : null}
             </div>
@@ -358,4 +358,4 @@ const AdmissionForm = () => {
   );
 };
 
-export default AdmissionForm;
+export default AddTeacher;
