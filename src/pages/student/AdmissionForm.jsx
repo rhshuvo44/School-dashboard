@@ -1,5 +1,4 @@
 import { useFormik } from "formik";
-import Select from "react-select";
 import * as yup from "yup";
 import Breadcrumbs from "../../component/Breadcrumbs";
 import InputFile from "../../component/Form/InputFile";
@@ -27,7 +26,7 @@ let schema = yup.object().shape({
   admissionID: yup.string().required("Admission ID is Required"),
   phone: yup.string().required("Phone Number is Required"),
   shortBIO: yup.string().required("Short BIO is Required"),
-  img: yup.string().required("Image is Required"),
+  // img: yup.string().required("Image is Required"),
 });
 const AdmissionForm = () => {
   const [gander, setGander] = useState("");
@@ -35,7 +34,12 @@ const AdmissionForm = () => {
   const [religion, setReligion] = useState("");
   const [StudentClass, setStudentClass] = useState("");
   const [section, setSection] = useState("");
+  const [uploadedFiles, setUploadedFiles] = useState([]);
 
+  const handleDrop = (acceptedFiles) => {
+    // Process the uploaded files, e.g., upload to a server, display them, etc.
+    setUploadedFiles(acceptedFiles);
+  };
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -51,7 +55,7 @@ const AdmissionForm = () => {
       admissionID: "",
       phone: "",
       shortBIO: "",
-      img: "",
+      img: [],
     },
     validationSchema: schema,
     onSubmit: (values) => {
@@ -66,7 +70,16 @@ const AdmissionForm = () => {
     formik.values.religion = religion ? religion : "";
     formik.values.StudentClass = StudentClass ? StudentClass : "";
     formik.values.section = section ? section : "";
-  }, [formik.values, gander, blood, religion, StudentClass, section]);
+    formik.values.img = uploadedFiles ? uploadedFiles : "";
+  }, [
+    formik.values,
+    gander,
+    blood,
+    religion,
+    StudentClass,
+    section,
+    uploadedFiles,
+  ]);
 
   return (
     <div>
@@ -262,7 +275,7 @@ const AdmissionForm = () => {
               ) : null}
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
             <div>
               <InputTextarea
                 id="shortBIO"
@@ -282,23 +295,30 @@ const AdmissionForm = () => {
             </div>
             <div>
               <InputFile
+                onDrop={handleDrop}
                 id="img"
                 label="Upload Student Photo (150px X 150px)"
-                name="img"
-                classname="focus:outline-0 bg-[#F0F1F3]"
-                onCh={formik.handleChange}
-                onBl={formik.handleBlur}
-                value={formik.values.img}
               />
               {formik.touched.img && formik.errors.img ? (
                 <div className="text-error text-sm">{formik.errors.img}</div>
               ) : null}
+
+              <div>
+                {uploadedFiles.map((file) => (
+                  <>
+                    <div className="avatar mt-2" key={file.name}>
+                      <div className="w-24 rounded">
+                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                      </div>
+                    </div>
+                  </>
+                ))}
+              </div>
             </div>
           </div>
 
           <div className="flex gap-10">
             <SubmitBtn type="submit">Save</SubmitBtn>
-            {/* <button type="submit">Submit</button> */}
             <SubmitBtn
               type="reset"
               className=" from-pink-500 to-yellow-500  hover:from-green-400 hover:to-blue-500 "
