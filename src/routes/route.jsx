@@ -18,6 +18,7 @@ import AdmissionForm from "../pages/student/AdmissionForm";
 import StudentPromotion from "../pages/student/StudentPromotion";
 import Signup from "../pages/Signup";
 import AddTeacher from "../pages/teachers/AddTeacher";
+import AddParent from "../pages/parents/AddParent";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
       {
         path: "all-parents",
         element: <AllParents />,
+      },
+      {
+        path: "add-parents",
+        element: <AddParent />,
       },
       {
         path: "all-students",

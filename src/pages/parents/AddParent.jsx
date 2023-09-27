@@ -7,13 +7,13 @@ import FormLabe from "../../component/Form/FormLabe";
 import InputText from "../../component/Form/InputText";
 import InputTextarea from "../../component/Form/InputTextarea";
 import Inputselect from "../../component/Form/Inputselect";
-import { bloods, classes, ganders, religions, sections } from "../../services";
+import { bloods, ganders, religions } from "../../services";
 import SubmitBtn from "../../utils/SubmitBtn";
 let schema = yup.object().shape({
   firstName: yup.string().required("First Name is Required"),
   lastName: yup.string().required("Last Name is Required"),
   gander: yup.string().required("Gender is Required"),
-  dob: yup.string().required("Date of Birth is Required"),
+  occupation: yup.string().required("Occupation is Required"),
   idNo: yup.string().required("ID No is Required"),
   blood: yup.string().required("Blood Group is Required"),
   religion: yup.string().required("Religion is Required"),
@@ -21,20 +21,16 @@ let schema = yup.object().shape({
     .string()
     .email("Invalid email address")
     .required("Email is Required"),
-  class: yup.string().required("Class is Required"),
-  section: yup.string().required("Section is Required"),
   address: yup.string().required("Address ID is Required"),
   phone: yup.string().required("Phone Number is Required"),
   shortBIO: yup.string().required("Short BIO is Required"),
   // img: yup.string().required("Image is Required"),
 });
 
-const AddTeacher = () => {
+const AddParent = () => {
   const [gander, setGander] = useState("");
   const [blood, setBlood] = useState("");
   const [religion, setReligion] = useState("");
-  const [StudentClass, setStudentClass] = useState("");
-  const [section, setSection] = useState("");
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
   const formik = useFormik({
@@ -42,13 +38,11 @@ const AddTeacher = () => {
       firstName: "",
       lastName: "",
       gander: "",
-      dob: "",
+      occupation: "",
       idNo: "",
       blood: "",
       religion: "",
       email: "",
-      class: "",
-      section: "",
       address: "",
       phone: "",
       shortBIO: "",
@@ -65,23 +59,13 @@ const AddTeacher = () => {
     formik.values.gander = gander ? gander : "";
     formik.values.blood = blood ? blood : "";
     formik.values.religion = religion ? religion : "";
-    formik.values.class = StudentClass ? StudentClass : "";
-    formik.values.section = section ? section : "";
     formik.values.img = uploadedFiles ? uploadedFiles : "";
-  }, [
-    formik.values,
-    gander,
-    blood,
-    religion,
-    StudentClass,
-    section,
-    uploadedFiles,
-  ]);
+  }, [formik.values, gander, blood, religion, uploadedFiles]);
   return (
     <section>
-      <Breadcrumbs title="Add New Teacher" />
+      <Breadcrumbs title="Add New Parent" />
       <div className="bg-base-100 shadow-2xl p-5">
-        <h2 className="text-2xl font-bold mb-5">Add New Teacher</h2>
+        <h2 className="text-2xl font-bold mb-5">Add New Parent</h2>
         <form onSubmit={formik.handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
             <div>
@@ -135,17 +119,20 @@ const AddTeacher = () => {
             </div>
             <div>
               <InputText
-                id="dob"
-                label="Date of Birth"
-                name="dob"
+                id="occupation"
+                label="Occupation"
+                name="occupation"
+                placeholder="Occupation"
                 classname="focus:outline-0 bg-[#F0F1F3]"
-                type="date"
+                type="text"
                 onCh={formik.handleChange}
                 onBl={formik.handleBlur}
-                value={formik.values.dob}
+                value={formik.values.occupation}
               />
-              {formik.touched.dob && formik.errors.dob ? (
-                <div className="text-error text-sm">{formik.errors.dob}</div>
+              {formik.touched.occupation && formik.errors.occupation ? (
+                <div className="text-error text-sm">
+                  {formik.errors.occupation}
+                </div>
               ) : null}
             </div>
             <div>
@@ -206,34 +193,6 @@ const AddTeacher = () => {
               />
               {formik.touched.email && formik.errors.email ? (
                 <div className="text-error text-sm">{formik.errors.email}</div>
-              ) : null}
-            </div>
-            <div>
-              <Inputselect
-                label="Class"
-                onChange={(e) => setStudentClass(e.value)}
-                options={classes}
-                placeholder="Please Select Class"
-                id="class"
-                name="class"
-              />
-              {formik.touched.class && formik.errors.class ? (
-                <div className="text-error text-sm">{formik.errors.class}</div>
-              ) : null}
-            </div>
-            <div>
-              <Inputselect
-                label="Section"
-                onChange={(e) => setSection(e.value)}
-                options={sections}
-                placeholder="Please Select Section "
-                id="section"
-                name="section"
-              ></Inputselect>
-              {formik.touched.section && formik.errors.section ? (
-                <div className="text-error text-sm">
-                  {formik.errors.section}
-                </div>
               ) : null}
             </div>
             <div>
@@ -358,4 +317,4 @@ const AddTeacher = () => {
   );
 };
 
-export default AddTeacher;
+export default AddParent;
