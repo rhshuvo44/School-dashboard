@@ -19,6 +19,8 @@ import StudentPromotion from "../pages/student/StudentPromotion";
 import Signup from "../pages/Signup";
 import AddTeacher from "../pages/teachers/AddTeacher";
 import AddParent from "../pages/parents/AddParent";
+import AddBook from "../pages/Library/AddBook";
+import AddExpenses from "../pages/Accounts/AddExpenses";
 
 export const router = createBrowserRouter([
   {
@@ -96,6 +98,14 @@ export const router = createBrowserRouter([
       {
         path: "admission-form",
         element: <AdmissionForm />,
+      },
+      {
+        path: "add-new-book",
+        element: <AddBook />,
+      },
+      {
+        path: "add-new-expenses",
+        element: <AddExpenses />,
       },
     ],
   },

@@ -6,7 +6,7 @@ const SidebarLink = () => {
     <>
       {navLink.map((item) => (
         <>
-          <li key={item.navTitle}>
+          <li key={item.id}>
             {item.id === 1 ? (
               <details open>
                 <summary className="font-bold text-xl text-[orange] hover:bg-transparent hover:text-[orange]">
@@ -14,8 +14,8 @@ const SidebarLink = () => {
                   {item.navTitle}
                 </summary>
                 <ul>
-                  {item.links.map((link) => (
-                    <li key={link.path}>
+                  {item.links.map((link, index) => (
+                    <li key={index}>
                       <Link
                         className="hover:bg-transparen capitalize"
                         to={link.path}
