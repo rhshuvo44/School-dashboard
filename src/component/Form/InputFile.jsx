@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import FormLabe from "./FormLabe";
 
-const InputFile = ({ onDrop, id, label }) => {
+const InputFile = ({ onDrop, id, label, name }) => {
   const onDropCallback = useCallback(
     (acceptedFiles) => {
       if (onDrop) {
@@ -20,7 +20,12 @@ const InputFile = ({ onDrop, id, label }) => {
       <FormLabe id={id} label={label} />
 
       <div {...getRootProps()} className="file-input">
-        <input {...getInputProps()} className="input-file" required />
+        <input
+          {...getInputProps()}
+          name={name}
+          className="input-file"
+          required
+        />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"

@@ -9,6 +9,8 @@ import SubmitBtn from "../../utils/SubmitBtn";
 import { useEffect, useState } from "react";
 import { bloods, classes, ganders, religions, sections } from "../../services";
 import Inputselect from "../../component/Form/Inputselect";
+import Dropzone from "react-dropzone";
+import FormLabe from "../../component/Form/FormLabe";
 let schema = yup.object().shape({
   firstName: yup.string().required("First Name is Required"),
   lastName: yup.string().required("Last Name is Required"),
@@ -36,10 +38,6 @@ const AdmissionForm = () => {
   const [section, setSection] = useState("");
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
-  const handleDrop = (acceptedFiles) => {
-    // Process the uploaded files, e.g., upload to a server, display them, etc.
-    setUploadedFiles(acceptedFiles);
-  };
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -68,7 +66,7 @@ const AdmissionForm = () => {
     formik.values.gander = gander ? gander : "";
     formik.values.blood = blood ? blood : "";
     formik.values.religion = religion ? religion : "";
-    formik.values.StudentClass = StudentClass ? StudentClass : "";
+    formik.values.class = StudentClass ? StudentClass : "";
     formik.values.section = section ? section : "";
     formik.values.img = uploadedFiles ? uploadedFiles : "";
   }, [
@@ -220,7 +218,7 @@ const AdmissionForm = () => {
                 placeholder="Please Select Class"
                 id="class"
                 name="class"
-              ></Inputselect>
+              />
               {formik.touched.class && formik.errors.class ? (
                 <div className="text-error text-sm">{formik.errors.class}</div>
               ) : null}
@@ -294,11 +292,41 @@ const AdmissionForm = () => {
               ) : null}
             </div>
             <div>
-              <InputFile
-                onDrop={handleDrop}
-                id="img"
-                label="Upload Student Photo (150px X 150px)"
-              />
+              <FormLabe id="img" label="Upload Student Photo (150px X 150px)" />
+              <Dropzone
+                onDrop={(acceptedFiles) => setUploadedFiles(acceptedFiles)}
+              >
+                {({ getRootProps, getInputProps }) => (
+                  <section className="file-input">
+                    <div {...getRootProps()}>
+                      <input
+                        {...getInputProps()}
+                        id="img"
+                        name="img"
+                        className="input-file"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2"
+                        fill="none"
+                        stroke="currentColor"
+                        className="icon"
+                      >
+                        <polyline points="16 16 12 12 8 16"></polyline>
+                        <line y2="21" x2="12" y1="12" x1="12"></line>
+                        <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+                        <polyline points="16 16 12 12 8 16"></polyline>
+                      </svg>
+                    </div>
+                  </section>
+                )}
+              </Dropzone>
+
               {formik.touched.img && formik.errors.img ? (
                 <div className="text-error text-sm">{formik.errors.img}</div>
               ) : null}
@@ -308,7 +336,7 @@ const AdmissionForm = () => {
                   <>
                     <div className="avatar mt-2" key={file.name}>
                       <div className="w-24 rounded">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <img src="https://i.ibb.co/c3BmNsD/DSC-0814.jpg" />
                       </div>
                     </div>
                   </>
