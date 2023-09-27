@@ -33,3 +33,15 @@ export const sections = [
   { value: "Rose", label: "Two" },
   { value: "Red", label: "Red" },
 ];
+export const expenses = [
+  { value: "Pink", label: "Pink" },
+  { value: "Blue", label: "Blue" },
+  { value: "Bird", label: "Bird" },
+  { value: "Rose", label: "Two" },
+  { value: "Red", label: "Red" },
+];
+export const statuss = [
+  { value: "Paid", label: "Paid" },
+  { value: "Due", label: "Due" },
+  { value: "Others", label: "Others" },
+];

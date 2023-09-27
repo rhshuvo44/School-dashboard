@@ -1,13 +1,10 @@
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
-import Dropzone from "react-dropzone";
 import * as yup from "yup";
 import Breadcrumbs from "../../component/Breadcrumbs";
-import FormLabe from "../../component/Form/FormLabe";
 import InputText from "../../component/Form/InputText";
-import InputTextarea from "../../component/Form/InputTextarea";
 import Inputselect from "../../component/Form/Inputselect";
-import { bloods, classes, ganders, religions, sections } from "../../services";
+import { classes } from "../../services";
 import SubmitBtn from "../../utils/SubmitBtn";
 let schema = yup.object().shape({
   bookName: yup.string().required("Book Name is Required"),
